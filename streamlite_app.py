@@ -22,8 +22,3 @@ st.write(results)
 
 
 
-%%writefile app.py
-
-
-
-!streamlit run app.py
