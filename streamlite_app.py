@@ -16,13 +16,3 @@ st.multiselect("Pick some fruits:", list(my_fruit_list.index))
 st.dataframe(my_fruit_list)
 
 
-import snowflake.connector
-conn = snowflake.connector.connect(
-    user='SAICHARAN11',
-    password='Saicharan@11',
-    account='bc34544.central-india.azure',
-    warehouse='DEMO_WH',
-    database='MY_DB',
-    schema='MY_SCH'
-)
-st.dataframe(sales)
