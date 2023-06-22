@@ -1,2 +1,2 @@
 import streamlit
-streamlit.title("i am using snowflake)
+streamlit.title("i am using snowflake")
