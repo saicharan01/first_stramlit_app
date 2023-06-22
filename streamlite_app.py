@@ -22,11 +22,6 @@ st.write(results)
 
 
 
-!pip install streamlit
-!pip install pyngrok
-
-
-
 %%writefile app.py
 
 
