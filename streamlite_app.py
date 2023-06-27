@@ -16,7 +16,7 @@ fruit_selected=st.multiselect("Pick some fruits:", list(my_fruit_list.index),['A
 fruits_show=my_fruit_list.loc[fruit_selected]
 st.dataframe(fruits_show)
 
-fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+fruit_choice = st.text_input('What fruit would you like information about?','Kiwi')
 st.write('The user entered ', fruit_choice)
 import requests as rs
 st.header("Fruityvice Fruit Advice!")
