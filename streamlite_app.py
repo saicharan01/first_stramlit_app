@@ -20,6 +20,6 @@ st.dataframe(fruits_show)
 import requests as rs
 st.header("Fruityvice Fruit Advice!")
 fruityvice_response = rs.get("https://fruityvice.com/api/fruit/watermelon")
-st.text(fruityvice_response)
+st.text(fruityvice_response.json())
 
 
