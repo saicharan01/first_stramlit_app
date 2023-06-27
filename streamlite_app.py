@@ -18,8 +18,8 @@ st.dataframe(fruits_show)
 
 
 import requests as rs
-streamlit.header("Fruityvice Fruit Advice!")
+st.header("Fruityvice Fruit Advice!")
 fruityvice_response = rs.get("https://fruityvice.com/api/fruit/watermelon")
-streamlit.text(fruityvice_response)
+st.text(fruityvice_response)
 
 
