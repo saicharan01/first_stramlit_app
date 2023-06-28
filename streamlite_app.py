@@ -26,9 +26,10 @@ def get_fruit_load_list():
         my_cur.execute("SELECT * FROM fruit_load_list")
         return my_cur.fetchall()
 
-my_cux = snowflake.connector.connect(**st.secrets["snowflake"])
 
+my_cux = None
 if st.button("Get fruit load list"):
+    my_cux = snowflake.connector.connect(**st.secrets["snowflake"])
     my_data_rows = get_fruit_load_list()
     st.dataframe(my_data_rows)
 
