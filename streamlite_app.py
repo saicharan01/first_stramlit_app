@@ -8,9 +8,9 @@ def get_fruitvice_data(this_fruit_choise):
   fruityvice_normalize=pandas.json_normalize(fruityvice_response.json())
   return fruityvice_normalize
 
-st.header("Frutiyvice fruit advice:")
+streamlit.header("Frutiyvice fruit advice:")
 try:
-  fruit_choice = st .text_input('What fruit would you like information about?')
+  fruit_choice = streamlit .text_input('What fruit would you like information about?')
   if not  fruit_choice :
     st.error("please select a fruit to get information.")
   else:
@@ -18,13 +18,18 @@ try:
     st.dataframe(function_retun_value)
 except URLError as e:
   st.error()
-st.header("the fruti load list:")
+
+st.header("The fruit load list:")
+
 def get_fruit_load_list():
-  with my_cux.cursor() as my_cur:
-    my_cur.execute("select * from fruit_load_list")
-    return my_cur.fetchall()
-if st.button("get fruit load list"):
-  my_cux=snowflake.connector.connect(**st.secrets["snowflake"])
-  my_data_rows= get_fruit_load_list()
-  st.dataframe(my_data_rows)
+    with my_cux.cursor() as my_cur:
+        my_cur.execute("SELECT * FROM fruit_load_list")
+        return my_cur.fetchall()
+
+my_cux = snowflake.connector.connect(**st.secrets["snowflake"])
+
+if st.button("Get fruit load list"):
+    my_data_rows = get_fruit_load_list()
+    st.dataframe(my_data_rows)
+
   
