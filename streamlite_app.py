@@ -20,9 +20,9 @@ except URLError as e:
   st.error()
 st.header("the fruti load list:")
 def get_fruit_load_list():
-  with my_cux.cursor() as my_cux:
-    my_cux.execute("select * from fruit_load_list")
-    return my_cux.fetchall()
+  with my_cux.cursor() as my_cur:
+    my_cur.execute("select * from fruit_load_list")
+    return my_cur.fetchall()
 if st.button("get fruit load list"):
   my_cux=snowflake.connector.connect(**st.secrets["snowflake"])
   my_data_rows= get_fruit_load_list()
