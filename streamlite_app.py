@@ -23,7 +23,7 @@ def get_fruit_load_list():
   with my_cux.cursor() as my_cux:
     my_cux.execute("select * from fruit_load_list")
     return my_cux.fetchall()
-if st.buttor("get fruit load list"):
+if st.button("get fruit load list"):
   my_cur=snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows= get_fruit_load_list()
   st.dataframe(my_data_rows)
