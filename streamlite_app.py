@@ -5,6 +5,7 @@ import snowflake.connector
 from urllib.error import URLError
 def get_fruitvice_data(this_fruit_choise):
   fruityvice_response = requests.get("https://fruityvice.com/api/fruit/"+this_fruit_choise ) 
+  streamlit.text(fruityvice_response.json())
   fruityvice_normalize=pandas.json_normalize(fruityvice_response.json())
   return fruityvice_normalize
 
