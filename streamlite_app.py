@@ -27,3 +27,4 @@ if st.buttor("get fruit load list"):
   my_cur=snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows= get_fruit_load_list()
   st.dataframe(my_data_rows)
+  
