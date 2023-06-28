@@ -22,7 +22,7 @@ except URLError as e:
 st.header("The fruit load list:")
 
 def get_fruit_load_list():
-    with my_cux.cursor() as my_cur:
+        my_cur = my_cnx.cursor()
         my_cur.execute("SELECT * FROM fruit_load_list")
         return my_cur.fetchall()
 
