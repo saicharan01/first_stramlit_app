@@ -22,15 +22,13 @@ except URLError as e:
 st.header("The fruit load list:")
 
 def get_fruit_load_list():
-        my_cur = my_cnx.cursor()
-        my_cur.execute("SELECT * FROM fruit_load_list")
-        return my_cur.fetchall()
+  my_cur = my_cnx.cursor()
+  my_cur.execute("SELECT * FROM fruit_load_list")
+  return my_cur.fetchall()
 
-
-my_cux = None
 if st.button("Get fruit load list"):
-    my_cux = snowflake.connector.connect(**st.secrets["snowflake"])
-    my_data_rows = get_fruit_load_list()
-    st.dataframe(my_data_rows)
+  my_cux = snowflake.connector.connect(**st.secrets["snowflake"])
+  my_data_rows = get_fruit_load_list()
+  st.dataframe(my_data_rows)
 
   
