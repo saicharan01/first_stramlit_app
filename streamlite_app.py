@@ -19,3 +19,12 @@ try:
     st.dataframe(function_retun_value)
 except URLError as e:
   st.error()
+st.header("the fruti load list:")
+def get_fruit_load_list():
+  with my_cux.cursor() as my_cux:
+    my_cux.execute("select * from fruit_load_list")
+    return my_cux.fetchall()
+if st.buttor("get fruit load list"):
+  my_cur=snowflake.connector.connect(**streamlit.secrets["snowflake"])
+  my_data_rows= get_fruit_load_list()
+  st.dataframe(my_data_rows)
