@@ -1,6 +1,4 @@
 import streamlit as st
-import React from 'react'
-import ReactDOM from 'react-dom'
 import pandas as pd
 import requests
 import snowflake.connector
@@ -48,23 +46,4 @@ if st.button("Add new fruit"):
 
 
 
-
-def app():
-    # Create a React component
-    component = React.createClass({
-        render: function() {
-            return (
-                <div>
-                    This is a React component!
-                </div>
-            )
-        }
-    })
-
-    # Embed the React component in a Streamlit app
-    html = ReactDOM.renderToString(component)
-    st.write(html)
-
-if __name__ == '__main__':
-    app()
 
